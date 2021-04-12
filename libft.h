@@ -10,5 +10,6 @@ void	ft_bzero(void *dest, size_t n);
 void	*ft_memcpy(void *dest, const void *src, size_t n);
 void	*ft_memccpy(void *dest, const void *src, int symbol, size_t count);
 void	*ft_memmove(void *dst, const void *src, size_t n);
+void	*ft_memchr(const void *arr, int c, size_t n);
 
 #endif
