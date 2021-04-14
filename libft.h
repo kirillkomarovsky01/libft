@@ -14,5 +14,6 @@ void	*ft_memchr(const void *arr, int c, size_t n);
 int	ft_memcmp(const void *arrFirst, const void *arrSecond, size_t n);
 int	ft_strlen(const char *str);
 size_t	ft_strlcpy(char *dst, const char *src, size_t buf);
+char	*ft_strchr(const char *src, int symbol);
 
 #endif
