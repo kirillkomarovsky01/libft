@@ -17,5 +17,6 @@ size_t	ft_strlcpy(char *dst, const char *src, size_t buf);
 char	*ft_strchr(const char *src, int symbol);
 char	*ft_strrchr(const char *src, int symbol);
 char	*ft_strnstr(const char *strFirst, const char *strSecond, size_t num);
+int	ft_strncmp(const char *strFirst, const char *strSecond, size_t num);
 
 #endif
