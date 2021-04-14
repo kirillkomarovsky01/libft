@@ -18,5 +18,7 @@ char	*ft_strchr(const char *src, int symbol);
 char	*ft_strrchr(const char *src, int symbol);
 char	*ft_strnstr(const char *strFirst, const char *strSecond, size_t num);
 int	ft_strncmp(const char *strFirst, const char *strSecond, size_t num);
-
+int	ft_isalpha(int ch);
+int	ft_isdigit(int c);
+int	ft_isalnum(int c);
 #endif
