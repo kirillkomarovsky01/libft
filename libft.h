@@ -25,5 +25,7 @@ int	ft_isascii(int c);
 int	ft_isprint(int ch);
 int	ft_toupper(int c);
 int	ft_tolower(int ch);
+void	*ft_calloc(size_t number, size_t size);
+char	*ft_strdup(const char *src);
 
 #endif
