@@ -20,5 +20,10 @@ char	*ft_strnstr(const char *strFirst, const char *strSecond, size_t num);
 int	ft_strncmp(const char *strFirst, const char *strSecond, size_t num);
 int	ft_isalpha(int ch);
 int	ft_isdigit(int c);
-int	ft_isalnum(int c);
+int	ft_isalnum(int ch);
+int	ft_isascii(int c);
+int	ft_isprint(int ch);
+int	ft_toupper(int c);
+int	ft_tolower(int ch);
+
 #endif
