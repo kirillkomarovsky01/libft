@@ -13,9 +13,9 @@ static void	ft_free(char **arr, size_t size)
 
 static void	ft_createArr(char **arr, const char *s, char c, size_t nb)
 {
-	size_t len;
-	size_t i;
-	size_t j;
+	size_t	len;
+	size_t	i;
+	size_t	j;
 
 	j = 0;
 	i = 0;
@@ -28,10 +28,10 @@ static void	ft_createArr(char **arr, const char *s, char c, size_t nb)
 		while (s[j + len] && s[j + len] != c)
 			++len;
 		arr[i] = ft_substr(s, j, len);
-		if(!arr[i])
+		if (!arr[i])
 		{
 			ft_free(arr, nb);
-			break;
+			break ;
 		}
 		j = j + len;
 		++i;
@@ -40,10 +40,10 @@ static void	ft_createArr(char **arr, const char *s, char c, size_t nb)
 
 static size_t	ft_count(const char *s, char c)
 {
-	size_t nb;
-	size_t i;
-	size_t j;
-	
+	size_t	nb;
+	size_t	i;
+	size_t	j;
+
 	nb = 0;
 	i = 0;
 	while (s[i])
@@ -62,9 +62,9 @@ static size_t	ft_count(const char *s, char c)
 
 char	**ft_split(const char *s, char c)
 {
-	size_t nb;
-	char **arr;
-	
+	size_t	nb;
+	char	**arr;
+
 	if (!s)
 		return (NULL);
 	nb = ft_count(s, c);
@@ -72,5 +72,5 @@ char	**ft_split(const char *s, char c)
 	if (!arr)
 		return (NULL);
 	ft_createArr(arr, s, c, nb);
-	return (arr); 
+	return (arr);
 }

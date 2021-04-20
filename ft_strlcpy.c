@@ -1,10 +1,9 @@
-
 #include "libft.h"
 
 size_t	ft_strlcpy(char *dst, const char *src, size_t buf)
 {
-	size_t index;
-	size_t lengthSrc;
+	size_t	index;
+	size_t	lengthSrc;
 
 	index = 0;
 	lengthSrc = 0;

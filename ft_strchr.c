@@ -1,10 +1,9 @@
-
 #include "libft.h"
 
 char	*ft_strchr(const char *src, int symbol)
 {
-	int i;
-	char newSymbol;
+	int		i;
+	char	newSymbol;
 
 	i = 0;
 	newSymbol = (unsigned char)symbol;

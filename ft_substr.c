@@ -2,16 +2,16 @@
 
 char	*ft_substr(char const *s, unsigned int start, size_t len)
 {
-	size_t index;
-	char *dest;
-	int lens;
+	size_t	index;
+	char	*dest;
+	size_t	lens;
 
 	lens = ft_strlen(s);
 	index = 0;
 	if (!s)
 		return (NULL);
-	if (lens < (int)start)
-		len = 0; 
+	if (lens < (size_t)start)
+		len = 0;
 	dest = malloc(len + 1);
 	if (!dest)
 		return (NULL);

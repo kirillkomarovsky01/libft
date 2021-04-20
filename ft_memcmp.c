@@ -1,11 +1,10 @@
-
 #include "libft.h"
 
 int	ft_memcmp(const void *arrFirst, const void *arrSecond, size_t n)
 {
-	unsigned char *newArrFirst;
-	unsigned char *newArrSecond;
-	size_t i;
+	unsigned char	*newArrFirst;
+	unsigned char	*newArrSecond;
+	size_t			i;
 
 	i = 0;
 	newArrFirst = (unsigned char *)arrFirst;

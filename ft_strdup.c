@@ -2,10 +2,10 @@
 
 char	*ft_strdup(const char *src)
 {
-	size_t lenSrc;
-	size_t index;
-	char *dest;
-	
+	size_t	lenSrc;
+	size_t	index;
+	char	*dest;
+
 	index = 0;
 	lenSrc = 0;
 	while (src[lenSrc])

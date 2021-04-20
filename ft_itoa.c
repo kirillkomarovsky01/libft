@@ -2,7 +2,7 @@
 
 static int	ft_lenInt(int n)
 {
-	int len;
+	int	len;
 
 	if (n <= 0)
 		len = 1;
@@ -34,10 +34,10 @@ static int	ft_numNeg(int n)
 
 char	*ft_itoa(int n)
 {
-	int		neg;
+	int				neg;
 	unsigned int	num;
-	char		*str;
-	int		len;
+	char			*str;
+	int				len;
 
 	len = ft_lenInt(n);
 	str = malloc(len + 1);
