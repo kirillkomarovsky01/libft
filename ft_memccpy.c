@@ -2,19 +2,23 @@
 
 void	*ft_memccpy(void *dest, const void *src, int symbol, size_t count)
 {
-	unsigned char	*newDest;
-	unsigned char	*newSrc;
-	size_t			i;
+	char		*d;
+	const char	*s;
 
-	i = 0;
-	newDest = dest;
-	newSrc = (unsigned char *)src;
-	while (i < count)
+	d = (char *)dest;
+	s = (const char *)src;
+	while (count--)
 	{
-		newDest[i] = newSrc[i];
-		if (newSrc[i] == symbol)
-			return (dest);
-		++i;
+		*d = *s;
+		if (*s == (const char)symbol)
+		{
+			return ((char *)dest + 1);
+			break ;
+		}
+		++d;
+		++s;
+		++dest;
+		++src;
 	}
 	return (0);
 }

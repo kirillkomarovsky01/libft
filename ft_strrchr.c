@@ -1,15 +1,19 @@
 #include "libft.h"
 
-char	*ft_strrchr(const char *src, int symbol)
+static void	*ft_memrchr(const void *s, int c, size_t n)
 {
-	int	i;
+	unsigned char	*str;
+	size_t			i;
 
-	i = 0;
-	while (src[i] != '\0')
-		++i;
-	while (i >= 0 && src[i] != (char)symbol)
-		i--;
-	if ((char)symbol == src[i])
-		return ((char *)&src[i]);
-	return (NULL);
+	str = (unsigned char *)s;
+	i = -1;
+	while (++i < n)
+		if (str[n - i - 1] == (unsigned char)c)
+			return (str + n - i - 1);
+	return (0);
+}
+
+char		*ft_strrchr(const char *s, int c)
+{
+	return (ft_memrchr(s, c, ft_strlen(s) + 1));
 }

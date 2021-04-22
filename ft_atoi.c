@@ -1,40 +1,29 @@
 #include "libft.h"
 
-static int	ft_f_r(char s)
-{
-	if ((s == '\f') || (s == '\r'))
-		return (1);
-	return (0);
-}
-
-static int	ft_n_v(char s)
-{
-	if ((s == '\n') || (s == '\v') || (s == '\t'))
-		return (1);
-	return (0);
-}
-
 int	ft_atoi(const char *str)
 {
-	int	result;
-	int	negative;
-	int	i;
+	int sign;
+	int res;
 
-	i = 0;
-	result = 0;
-	negative = 0;
-	while ((str[i] == ' ') || ft_n_v(str[i]) || ft_f_r(str[i]))
-		++i;
-	if (str[i] == '-')
-		negative = -1;
-	if (str[i] == '-' || str[i] == '+')
-		++i;
-	while (str[i] >= '0' && str[i] <= '9')
+	res = 0;
+	sign = 1;
+	while (*str == ' ' || *str == '\f' || *str == '\r' || *str == '\t'
+			|| *str == '\v' || *str == '\n')
+		str++;
+	if (*str == '-' || *str == '+')
 	{
-		result = result * 10 + (int)str[i] - '0';
-		++i;
+		if (*str == '-')
+			sign = -sign;
+		str++;
 	}
-	if (negative != 0)
-		result *= (-1);
-	return (result);
+	while (*str != '\0' && (*str >= '0' && *str <= '9'))
+	{
+		if (res < 0 && sign < 0)
+			return (0);
+		if (res < 0 && sign > 0)
+			return (-1);
+		res = (res * 10) + (*str - '0');
+		str++;
+	}
+	return (res * sign);
 }

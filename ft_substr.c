@@ -1,26 +1,43 @@
 #include "libft.h"
 
-char	*ft_substr(char const *s, unsigned int start, size_t len)
+static size_t	ft_len(char const *s, unsigned int start, size_t lenstr)
 {
-	size_t	index;
-	char	*dest;
-	size_t	lens;
+	size_t		len1;
+	size_t		len2;
 
-	lens = ft_strlen(s);
-	index = 0;
-	if (!s)
-		return (NULL);
-	if (lens < (size_t)start)
-		len = 0;
-	dest = malloc(len + 1);
-	if (!dest)
-		return (NULL);
-	while (s[start + index] && len > 0)
+	len1 = 0;
+	len2 = ft_strlen(s);
+	if (start < len2)
 	{
-		dest[index] = s[start + index];
-		len--;
-		++index;
+		len1 = len2 - start;
+		if (len1 > lenstr)
+			len1 = lenstr;
 	}
-	dest[index] = '\0';
-	return (dest);
+	return (len1);
+}
+
+char			*ft_substr(char const *s, unsigned int start, size_t len)
+{
+	char	*sy;
+	size_t	i;
+	size_t	len_s;
+
+	sy = NULL;
+	if (s)
+	{
+		len = ft_len(s, start, len);
+		sy = ft_calloc(len + 1, sizeof(*sy));
+	}
+	if (sy)
+	{
+		len_s = ft_strlen(s);
+		i = 0;
+		while (start < len_s && i < len)
+		{
+			sy[i] = s[start];
+			start++;
+			i++;
+		}
+	}
+	return (sy);
 }
